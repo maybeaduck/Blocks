@@ -40,6 +40,8 @@ namespace Zlodey
                 .Add(new StartGameSystem())
                 .Add(new ChangeGameStateSystem())
 
+                .Add(new InputSystem())
+
                 .Inject(_runtimeData)
                 .Inject(_config)
                 .Inject(_scene)

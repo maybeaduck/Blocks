@@ -45,6 +45,7 @@ namespace Zlodey
             else if(Progress.CurentSound == 1){
                 base._runtimeData.SoundOn = true;
             }
+
         }
     }
 }

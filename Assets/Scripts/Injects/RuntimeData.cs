@@ -10,8 +10,12 @@ namespace Zlodey
     [Serializable]
     public class RuntimeData
     {
+        [Header("Input")]
+        public bool IsAttack;
+
         [Header("Game")]
         public int DestroyedBlocksCount;
+        public WeaponView WeaponView;
 
         [Header("Weapon")]
         public Weapon CurrentWeapon;
