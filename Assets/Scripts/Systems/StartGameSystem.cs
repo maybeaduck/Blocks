@@ -1,16 +1,15 @@
 ﻿using Leopotam.Ecs;
-using UnityEngine.Playables;
 
 namespace Zlodey
 {
-    public class WinSystem : Injects, IEcsRunSystem
+    public class StartGameSystem : Injects, IEcsRunSystem
     {
-        private EcsFilter<WinEvent> _eventFilter;
+        private EcsFilter<StartGameEvent> _eventFilter;
         public void Run()
         {
             foreach (var index in _eventFilter)
             {
-                _world.NewEntity().Get<ChangeGameStateEvent>().State = GameState.Win;
+                _world.NewEntity().Get<ChangeGameStateEvent>().State = GameState.Play;
                 _eventFilter.GetEntity(index).Destroy();
             }
         }

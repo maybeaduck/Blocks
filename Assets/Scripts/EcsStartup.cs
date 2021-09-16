@@ -37,6 +37,7 @@ namespace Zlodey
                 .Add(new InitializeSystem())
                 .Add(new WinSystem())
                 .Add(new LoseSystem())
+                .Add(new StartGameSystem())
                 .Add(new ChangeGameStateSystem())
 
                 .Inject(_runtimeData)

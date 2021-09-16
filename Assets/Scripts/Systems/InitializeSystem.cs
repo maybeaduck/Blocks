@@ -8,10 +8,6 @@ namespace Zlodey
 {
     public class InitializeSystem : Injects, IEcsInitSystem
     {
-        private SceneData _sceneData;
-        private RuntimeData _runtimeData;
-        private EcsWorld _world;
-        private UI _ui;
         public void Init()
         {
             // AudioSource Instantiate
