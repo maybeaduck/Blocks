@@ -5,7 +5,7 @@ namespace Zlodey
 {
     public class SceneData : MonoBehaviour
     {
-        public Transform CameraRotate;
+        public CameraActor CameraRotate;
         public Camera Camera;
 
         public List<Weapon> StartSetWeapons;

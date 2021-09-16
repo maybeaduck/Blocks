@@ -1075,7 +1075,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29b9eac87b9ecba42a4f1c41c9ab21ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CameraRotate: {fileID: 1498234430}
+  CameraRotate: {fileID: 1498234427}
   Camera: {fileID: 595034465}
 --- !u!114 &1409529376
 MonoBehaviour:
@@ -1092,7 +1092,11 @@ MonoBehaviour:
   _config: {fileID: 11400000, guid: 485d49dcd145d4a47a41078eb9be667b, type: 2}
   _scene: {fileID: 1409529375}
   _runtimeData:
+    IsAttack: 0
     DestroyedBlocksCount: 0
+    WeaponView: {fileID: 0}
+    CurrentWeapon: {fileID: 0}
+    AvailableWeapons: []
     SoundOn: 0
     HapticOn: 0
     AudioSource: {fileID: 0}
@@ -1106,6 +1110,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1498234430}
+  - component: {fileID: 1498234427}
   m_Layer: 0
   m_Name: '[Camera]'
   m_TagString: Untagged
@@ -1113,6 +1118,18 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1498234427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1498234426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d77ce3c6a87794429c67b594003fb0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1498234430
 Transform:
   m_ObjectHideFlags: 0
