@@ -8,6 +8,15 @@ namespace Zlodey
         public void Run()
         {
             _runtimeData.IsAttack = Input.GetMouseButton(0) ? true : false;
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                
+            }
+            if (Input.GetMouseButtonUp(0))
+            {
+                
+            }
         }
     }
 }
