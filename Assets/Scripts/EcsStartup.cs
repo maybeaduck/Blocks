@@ -36,13 +36,14 @@ namespace Zlodey
 
             _systems
                 .Add(new InitializeSystem())
+                .Add(new CameraRotateSystem())
                 .Add(new WinSystem())
                 .Add(new LoseSystem())
                 .Add(new StartGameSystem())
                 .Add(new ChangeGameStateSystem())
 
                 .Add(new InputSystem())
-                .Add(new RotateCameraSystem())
+                .Add(new SwipeSystem())
                 .Inject(_runtimeData)
                 .Inject(_config)
                 .Inject(_scene)

@@ -26,5 +26,6 @@ namespace Zlodey
         public bool HapticOn;
         public AudioSource AudioSource;
         public GameState GameState;
+        public EcsEntity InputEntity;
     }
 }

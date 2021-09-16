@@ -10,6 +10,8 @@ namespace Zlodey
     {
         public void Init()
         {
+            _runtimeData.InputEntity = _world.NewEntity();
+            _runtimeData.InputEntity.Get<InputData>();
             // AudioSource Instantiate
             var spawnedAudioSource = GameObject.Find("AudioSource")?.GetComponent<AudioSource>();
             if (spawnedAudioSource == null)
@@ -45,7 +47,7 @@ namespace Zlodey
             else if(Progress.CurentSound == 1){
                 base._runtimeData.SoundOn = true;
             }
-
+            
         }
     }
 }
