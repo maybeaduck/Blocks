@@ -16,3 +16,5 @@ MonoBehaviour:
   ObjectPooler: {fileID: 6188418137672102728, guid: 768949f21594f2441a8554e3df35a506, type: 3}
   AudioSourcePrefab: {fileID: 5699235332874451145, guid: 87971207893c17340bb695b0e5d7a0f1, type: 3}
   UIPrefab: {fileID: 7691685437204089913, guid: 6f8dd4d19d855b541a176a362c49f4f2, type: 3}
+  MinSwipeLength: 30
+  RotationSpeed: 0.5

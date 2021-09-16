@@ -14,5 +14,6 @@ namespace Zlodey
         public AudioSource AudioSourcePrefab;
         public UI UIPrefab;
         public double MinSwipeLength;
+        public float RotationSpeed;
     }
 }
