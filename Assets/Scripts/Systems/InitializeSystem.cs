@@ -46,6 +46,9 @@ namespace Zlodey
                 base._runtimeData.SoundOn = true;
             }
 
+            //weapon
+            var weaponView = GameObject.FindObjectOfType<WeaponView>();
+            if (weaponView) _runtimeData.WeaponView = weaponView;
         }
     }
 }

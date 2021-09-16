@@ -42,6 +42,7 @@ namespace Zlodey
                 .Add(new ChangeGameStateSystem())
 
                 .Add(new InputSystem())
+                .Add(new WeaponAttackSystem())
                 .Add(new RotateCameraSystem())
                 .Inject(_runtimeData)
                 .Inject(_config)
