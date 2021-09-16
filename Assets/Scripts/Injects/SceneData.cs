@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 namespace Zlodey
 {
@@ -6,5 +7,7 @@ namespace Zlodey
     {
         public Transform CameraRotate;
         public Camera Camera;
+
+        public List<Weapon> StartSetWeapons;
     }
 }
