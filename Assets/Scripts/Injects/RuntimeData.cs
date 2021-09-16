@@ -20,6 +20,7 @@ namespace Zlodey
         [Header("Weapon")]
         public Weapon CurrentWeapon;
         public List<Weapon> AvailableWeapons;
+        public int IndexWeaponToList;
 
         [Header("Default")]
         public bool SoundOn;
