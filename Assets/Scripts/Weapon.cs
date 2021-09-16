@@ -3,15 +3,9 @@ using UnityEngine;
 
 namespace Zlodey
 {
-    [Serializable]
-    public class Weapon
+    public class Weapon : MonoBehaviour
     {
         public WeaponData WeaponData;
-    }
-    
-    public class WeaponData : ScriptableObject
-    {
-        public WeaponType WeaponType;
     }
     
     public enum WeaponType
