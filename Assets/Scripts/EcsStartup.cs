@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using Zlodey;
 using Leopotam.Ecs;
 using LeopotamGroup.Globals;
@@ -39,7 +40,8 @@ namespace Zlodey
                 .Add(new LoseSystem())
                 .Add(new StartGameSystem())
                 .Add(new ChangeGameStateSystem())
-
+                .Add(new RotateCameraSystem())
+                
                 .Inject(_runtimeData)
                 .Inject(_config)
                 .Inject(_scene)
@@ -71,5 +73,18 @@ namespace Zlodey
                 _world = null;
             }
         }
+    }
+
+    internal class RotateCameraSystem : Injects, IEcsRunSystem
+    {
+        private EcsFilter<RotateCamera> _rotate;
+        public void Run()
+        {
+            
+        }
+    }
+
+    internal struct RotateCamera
+    {
     }
 }
