@@ -3968,6 +3968,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CameraRotate: {fileID: 1498234427}
   Camera: {fileID: 595034465}
+  StartSetWeapons:
+  - {fileID: 8675338505279403030, guid: 116349d69f9413a48adec302c4eef458, type: 3}
 --- !u!114 &1409529376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3988,6 +3990,7 @@ MonoBehaviour:
     WeaponView: {fileID: 0}
     CurrentWeapon: {fileID: 0}
     AvailableWeapons: []
+    IndexWeaponToList: 0
     SoundOn: 0
     HapticOn: 0
     AudioSource: {fileID: 0}
