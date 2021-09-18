@@ -18,3 +18,16 @@ MonoBehaviour:
   UIPrefab: {fileID: 7691685437204089913, guid: 6f8dd4d19d855b541a176a362c49f4f2, type: 3}
   MinSwipeLength: 30
   RotationSpeed: 0.5
+  Debts:
+  - Level: 0
+    Value: 1
+  - Level: 1
+    Value: 0.5
+  - Level: 2
+    Value: 0.25
+  - Level: 3
+    Value: 0.25
+  - Level: 4
+    Value: 0.25
+  - Level: 5
+    Value: 0.25

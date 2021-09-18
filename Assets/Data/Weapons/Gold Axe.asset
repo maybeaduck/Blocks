@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   Speed: 3
+  Level: 3
   Name: Gold Axe
   Ico: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}

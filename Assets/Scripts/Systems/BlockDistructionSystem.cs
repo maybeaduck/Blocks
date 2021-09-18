@@ -35,7 +35,31 @@ namespace Zlodey
                 if (!entity.Has<TimeDistructionComponent>()) entity.Get<TimeDistructionComponent>().StartTime = Time.time;
 
                 var startTime = entity.Get<TimeDistructionComponent>().StartTime;
-                entity.Get<TimeDistructionComponent>().TimeHasPassed = Time.time - startTime;
+
+                var levelBlock = block.BlockData.Level;
+                var levelWeapon = _runtimeData.CurrentWeapon.WeaponData.Level;
+                var levelDelta = levelBlock - levelWeapon;
+                var debtValue = 1f;
+
+                Debug.Log($"levelWeapon {levelWeapon} : levelBlock {levelBlock} : levelDelta {levelDelta}");
+
+
+                if (levelDelta > 0)
+                {
+                    var debts = _staticData.Debts;
+                    foreach (var debt in debts)
+                    {
+                        if (debt.Level == levelDelta)
+                        {
+                            debtValue = debt.Value;
+                            break;
+                        }
+                    }
+                }
+
+                Debug.Log($"debtValue {debtValue}");
+
+                entity.Get<TimeDistructionComponent>().TimeHasPassed = (Time.time - startTime) * debtValue;
 
                 var timeHasPassed = entity.Get<TimeDistructionComponent>().TimeHasPassed;
                 Debug.Log($"timeHasPassed {timeHasPassed} : timeToDistruction {timeToDistruction}");
