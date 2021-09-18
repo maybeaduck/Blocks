@@ -15,9 +15,15 @@ public class TextureSetter : MonoBehaviour
     public Texture2D Front;
     public Texture2D Back;
     public Texture2D texture;
+    public string textureName;
     public void GenerateTexture()
     {
         texture = TextureGenerator.SpritesToTexture(width,height,multiple,Up,Down,Left,Right,Front,Back);
         Renderer.sharedMaterial.mainTexture = texture;
+    }
+
+    public void SaveTexture()
+    {
+        TextureGenerator.TextureToPNG(texture,textureName);
     }
 }

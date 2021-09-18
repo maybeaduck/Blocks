@@ -14,5 +14,13 @@ public class CubeTexturePainter : Editor
         {
             textureSetter.GenerateTexture();
         }
+        if (GUILayout.Button("Save"))
+        {
+            if (textureSetter.texture)
+            {
+                textureSetter.SaveTexture();    
+            }
+            
+        }
     }
 }
