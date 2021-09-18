@@ -7,20 +7,34 @@ namespace Zlodey
     {
         public void Run()
         {
-            _runtimeData.IsAttack = Input.GetMouseButton(0) ? true : false;
+            var isAttack = Input.GetMouseButton(0) ? true : false;
+            _runtimeData.IsAttack = isAttack;
+            if (isAttack)
+            {
+                Ray ray = _sceneData.Camera.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit))
+                {
+                    _world.NewEntity().Get<RayHitEvent>().Hit = hit;
+                }
+            }
 
             if (Input.GetMouseButtonDown(0))
             {
                 Ray ray = _sceneData.Camera.ScreenPointToRay(Input.mousePosition);
-                Debug.DrawRay(ray.origin,ray.direction*100f,Color.yellow);
-                if(Physics.Raycast(ray,out var hit))
+                RaycastHit hit;
+                if (Physics.Raycast(ray,out hit))
                 {
-                    
+
                 }
                 else
                 {
                     _sceneData.CameraRotate.entity.Get<RotateCamera>();
                 }
+
+
+                Debug.DrawRay(ray.origin, ray.direction * 100f, Color.yellow);
+
                 _runtimeData.InputEntity.Get<SwipeData>().startPoint = Input.mousePosition;
                 _runtimeData.InputEntity.Get<SwipeData>().sideSwipe = Side.None;
             }

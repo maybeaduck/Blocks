@@ -20,9 +20,9 @@ namespace Zlodey
             int scroll = Mathf.RoundToInt(Input.GetAxis("Mouse ScrollWheel") * 10f);
             _runtimeData.IndexWeaponToList += scroll;
 
-            Debug.Log($"scroll: {scroll}");
-            Debug.Log($"IndexWeaponToList: {_runtimeData.IndexWeaponToList}");
-            Debug.Log($"AvailableWeapons.Count: {_runtimeData.AvailableWeapons.Count}");
+            //Debug.Log($"scroll: {scroll}");
+            //Debug.Log($"IndexWeaponToList: {_runtimeData.IndexWeaponToList}");
+            //Debug.Log($"AvailableWeapons.Count: {_runtimeData.AvailableWeapons.Count}");
 
             if (_runtimeData.IndexWeaponToList < 0) _runtimeData.IndexWeaponToList = _runtimeData.AvailableWeapons.Count - 1;
             if (_runtimeData.IndexWeaponToList >= _runtimeData.AvailableWeapons.Count) _runtimeData.IndexWeaponToList = 0;
