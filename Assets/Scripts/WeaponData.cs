@@ -7,6 +7,7 @@ namespace Zlodey
     {
         public WeaponType Type;
         public float Speed;
+        public int Level;
 
         public string Name;
         public Sprite Ico;
