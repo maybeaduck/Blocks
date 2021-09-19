@@ -51,6 +51,7 @@ namespace Zlodey
                 .Add(new WeaponSpeedSystem())
 
                 .Add(new CheckBlockSystem())
+                .Add(new BlockSelectSystem())
                 .Add(new BlockDistructionSystem())
                 .Add(new BlockHitAnimationSystem())
                 .Add(new BlockReductionSystem())
