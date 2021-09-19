@@ -15,7 +15,7 @@ namespace Zlodey
 
         [Header("Game")]
         public int DestroyedBlocksCount;
-        public WeaponView WeaponView;
+        public Hand WeaponView;
 
         [Header("Weapon")]
         public Weapon CurrentWeapon;

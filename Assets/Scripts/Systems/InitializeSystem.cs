@@ -59,7 +59,7 @@ namespace Zlodey
             #endregion
 
             #region Weapon
-            var weaponView = GameObject.FindObjectOfType<WeaponView>();
+            var weaponView = GameObject.FindObjectOfType<Hand>();
             if (weaponView)
             {
                 _runtimeData.WeaponView = weaponView;

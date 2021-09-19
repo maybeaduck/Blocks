@@ -1,5 +1,6 @@
 ﻿using Leopotam.Ecs;
 using UnityEngine;
+using DG.Tweening;
 
 namespace Zlodey
 {
@@ -33,7 +34,6 @@ namespace Zlodey
                 var timeToDistruction = block.BlockData.TimeToDistruction;
 
                 if (!entity.Has<TimeDistructionComponent>()) entity.Get<TimeDistructionComponent>().StartTime = Time.time;
-
                 var startTime = entity.Get<TimeDistructionComponent>().StartTime;
 
                 var levelBlock = block.BlockData.Level;
@@ -70,6 +70,30 @@ namespace Zlodey
                     Debug.Log("Distrution");
                 }
             }
+        }
+    }
+    
+    public class BlockHitAnimationSystem : Injects, IEcsRunSystem
+    {
+        private EcsFilter<BlockComponent, BlockHitEvent>.Exclude<DistructionFlag> _filter;
+        private EcsFilter<HitEvent> _hitFilter;
+
+        public void Run()
+        {
+            foreach (var item in _filter)
+            {
+                ref var entity = ref _filter.GetEntity(item);
+                ref var block = ref _filter.Get1(item).Block;
+
+                Debug.Log("BlockHitAnimationSystem");
+
+                foreach (var hit in _hitFilter)
+                {
+                    Debug.Log("Hit " + Time.time);
+                    block.transform.DOShakePosition(.2f,.1f);
+                }
+            }
+
         }
     }
     
