@@ -6,9 +6,9 @@ namespace Zlodey
     {
         public void Run()
         {
-            if (_runtimeData.WeaponView)
+            if (_runtimeData.Hand)
             {
-                _runtimeData.WeaponView.Animator.SetBool("IsAttack", _runtimeData.IsAttack);
+                _runtimeData.Hand.Animator.SetBool("IsAttack", _runtimeData.IsAttack);
             }
         }
     }

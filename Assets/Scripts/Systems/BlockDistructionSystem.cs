@@ -34,6 +34,18 @@ namespace Zlodey
                 block.MeshRenderer.material.color *= .9f;
                 entity.Get<SelectFlag>();
 
+                var time = .25f;
+
+                var position = _runtimeData.StartHitPosition + (block.transform.position - _runtimeData.StartHitPosition);
+                position.y -= .5f;
+                _runtimeData.Hand.transform.DOMove(position, time).SetEase(Ease.InOutSine);
+                _runtimeData.Hand.Pivot.transform.DOLocalMoveX(-1f, .1f).SetEase(Ease.InOutSine);
+
+                var rotation = Quaternion.LookRotation(position).eulerAngles;
+                rotation.x = 0f;
+                rotation.y += 90f;
+                _runtimeData.Hand.transform.DORotate(rotation, time).SetEase(Ease.InOutSine);
+
                 Debug.Log("BlockSelectSystem _filter");
             }
 
@@ -44,7 +56,6 @@ namespace Zlodey
 
                 block.MeshRenderer.material.color = Color.white;
                 entity.Del<SelectFlag>();
-
                 Debug.Log("BlockSelectSystem _selectFilter");
             }
         }

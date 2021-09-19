@@ -7,6 +7,7 @@ namespace Zlodey
     public class Hand : MonoBehaviour
     {
         public Weapon Weapon;
+        public Transform Pivot;
         public Transform Parent;
         public Animator Animator;
 

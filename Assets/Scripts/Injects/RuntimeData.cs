@@ -15,12 +15,13 @@ namespace Zlodey
 
         [Header("Game")]
         public int DestroyedBlocksCount;
-        public Hand WeaponView;
+        public Hand Hand;
 
         [Header("Weapon")]
         public Weapon CurrentWeapon;
         public List<Weapon> AvailableWeapons;
         public int IndexWeaponToList;
+        public Vector3 StartHitPosition;
 
         [Header("Default")]
         public bool SoundOn;

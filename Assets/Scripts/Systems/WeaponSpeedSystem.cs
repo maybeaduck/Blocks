@@ -9,7 +9,7 @@ namespace Zlodey
             if (_runtimeData.CurrentWeapon)
             {
                 var speed = _runtimeData.CurrentWeapon.WeaponData.Speed;
-                _runtimeData.WeaponView.Animator.speed = speed;
+                _runtimeData.Hand.Animator.speed = speed;
             }
         }
     }

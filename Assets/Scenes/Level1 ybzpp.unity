@@ -9634,10 +9634,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 964025268}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
-  m_LocalPosition: {x: 0, y: 1.21, z: 14.11}
+  m_LocalPosition: {x: 0, y: 1.21, z: 20}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1468923578}
+  - {fileID: 1858723516}
   m_Father: {fileID: 1993570887}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
@@ -11090,7 +11090,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1295111383}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 622817309}
@@ -11754,10 +11754,11 @@ MonoBehaviour:
   _runtimeData:
     IsAttack: 0
     DestroyedBlocksCount: 0
-    WeaponView: {fileID: 0}
+    Hand: {fileID: 0}
     CurrentWeapon: {fileID: 0}
     AvailableWeapons: []
     IndexWeaponToList: 0
+    StartHitPosition: {x: 0, y: 0, z: 0}
     SoundOn: 0
     HapticOn: 0
     AudioSource: {fileID: 0}
@@ -11874,6 +11875,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Weapon: {fileID: 0}
+  Pivot: {fileID: 1295111384}
   Parent: {fileID: 622817309}
   Animator: {fileID: 1468923576}
 --- !u!4 &1468923578
@@ -11883,12 +11885,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1468923575}
-  m_LocalRotation: {x: 0, y: -0.7660445, z: 0, w: 0.64278764}
-  m_LocalPosition: {x: 0.71, y: -1.68, z: 3.46}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0.000000059604638, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 1295111384}
-  m_Father: {fileID: 964025269}
+  m_Father: {fileID: 1858723516}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -100, z: 0}
 --- !u!1001 &1469907291
@@ -13347,6 +13349,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7632022582842286735, guid: 1ed23f8a2a5029a44a68264fcf67ba61, type: 3}
   m_PrefabInstance: {fileID: 1854100741}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1858723515
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1858723516}
+  m_Layer: 0
+  m_Name: WeaponViewOffset
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1858723516
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1858723515}
+  m_LocalRotation: {x: -0, y: -0.76604444, z: -0, w: 0.64278764}
+  m_LocalPosition: {x: 0.71000004, y: -2.44, z: 3.46}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1468923578}
+  m_Father: {fileID: 964025269}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1930255015
 PrefabInstance:
   m_ObjectHideFlags: 0
