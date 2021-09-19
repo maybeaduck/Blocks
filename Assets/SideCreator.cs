@@ -9,14 +9,24 @@ public class SideCreator : MonoBehaviour
     
     public string SideName;
     
-    public bool haha;
+    public bool paintTexture;
+    public Color color;
     
     
     public Texture2D texture;
     public MeshRenderer renderer;
     public void GenerateSide()
     {
-        texture = TextureGenerator.TexturesToSide(layers);
+        if (paintTexture)
+        {
+            Debug.Log("PUP");
+            texture = TextureGenerator.PaintTexturesToSide(layers,color);
+        }
+        else
+        {
+            Debug.Log("KOK");
+            texture = TextureGenerator.TexturesToSide(layers);
+        }
         renderer.sharedMaterial.mainTexture = texture;
     }
 

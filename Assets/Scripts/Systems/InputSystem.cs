@@ -9,7 +9,7 @@ namespace Zlodey
         {
             var isAttack = Input.GetMouseButton(0) ? true : false;
             _runtimeData.IsAttack = isAttack;
-            if (isAttack)
+            if (isAttack &&  !_sceneData.CameraRotate.entity.Has<RotateCamera>())
             {
                 Ray ray = _sceneData.Camera.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
@@ -25,7 +25,7 @@ namespace Zlodey
                 RaycastHit hit;
                 if (Physics.Raycast(ray,out hit))
                 {
-
+                    
                 }
                 else
                 {

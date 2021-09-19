@@ -85,12 +85,12 @@ namespace Zlodey
 
             #region Camera
 
-            var cameraActor = GameObject.FindObjectOfType<CameraActor>();
-            if (cameraActor)
-            {
-                _sceneData.Camera = cameraActor.GetComponent<Camera>();
-                _sceneData.CameraRotate = cameraActor;
-            }
+            // var cameraActor = GameObject.FindObjectOfType<CameraActor>();
+            // if (cameraActor)
+            // {
+            //     _sceneData.Camera = cameraActor.GetComponent<Camera>();
+            //     _sceneData.CameraRotate = cameraActor;
+            // }
 
             #endregion
 
