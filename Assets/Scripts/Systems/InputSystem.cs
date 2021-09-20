@@ -8,9 +8,23 @@ namespace Zlodey
     {
         public void Run()
         {
-            var isAttack = Input.GetMouseButton(0) ? true : false;
-            _runtimeData.IsAttack = isAttack;
-            if (isAttack &&  !_sceneData.CameraRotate.entity.Has<RotateCamera>())
+            if (Input.GetMouseButton(0))
+            {
+                Ray ray = _sceneData.Camera.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit)&&  !_sceneData.CameraRotate.entity.Has<RotateCamera>() )
+                {
+                    _runtimeData.IsAttack = true;      
+                }
+                      
+            }
+            else
+            {
+                _runtimeData.IsAttack = false;       
+            }
+            
+            
+            if (_runtimeData.IsAttack &&  !_sceneData.CameraRotate.entity.Has<RotateCamera>())
             {
                 Ray ray = _sceneData.Camera.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
