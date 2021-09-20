@@ -128,6 +128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BlockData: {fileID: 11400000, guid: e195bf0ff3371f641b7a868dc72f38a6, type: 2}
   Loot: {fileID: 0}
+  MeshRenderer: {fileID: 4264783405839300716}
 --- !u!65 &4493309413219668053
 BoxCollider:
   m_ObjectHideFlags: 0

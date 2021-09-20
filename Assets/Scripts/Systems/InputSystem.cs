@@ -1,4 +1,5 @@
-﻿using Leopotam.Ecs;
+﻿using DG.Tweening;
+using Leopotam.Ecs;
 using UnityEngine;
 
 namespace Zlodey
@@ -25,7 +26,7 @@ namespace Zlodey
                 RaycastHit hit;
                 if (Physics.Raycast(ray,out hit))
                 {
-                    
+                    _runtimeData.StartHitPosition = _runtimeData.Hand.transform.position;
                 }
                 else
                 {
@@ -42,7 +43,10 @@ namespace Zlodey
             {
                 _runtimeData.InputEntity.Get<SwipeData>().endPoint = Input.mousePosition;
                 _runtimeData.InputEntity.Get<SwipeData>().startSwipe = true;
-                
+
+                _runtimeData.Hand.transform.DOLocalMove(Vector3.zero, .1f).SetEase(Ease.InOutSine);
+                _runtimeData.Hand.transform.DOLocalRotate(Vector3.zero, .1f).SetEase(Ease.InOutSine);
+                _runtimeData.Hand.Pivot.transform.DOLocalMove(Vector3.zero, .1f).SetEase(Ease.InOutSine);
             }
         }
     }

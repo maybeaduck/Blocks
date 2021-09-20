@@ -3,4 +3,8 @@
     internal struct DistructionFlag
     {
     }
+    
+    internal struct SelectFlag
+    {
+    }
 }

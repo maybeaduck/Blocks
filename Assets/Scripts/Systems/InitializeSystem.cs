@@ -59,10 +59,10 @@ namespace Zlodey
             #endregion
 
             #region Weapon
-            var weaponView = GameObject.FindObjectOfType<WeaponView>();
+            var weaponView = GameObject.FindObjectOfType<Hand>();
             if (weaponView)
             {
-                _runtimeData.WeaponView = weaponView;
+                _runtimeData.Hand = weaponView;
             }
 
             var startSet = _sceneData.StartSetWeapons;
@@ -71,7 +71,7 @@ namespace Zlodey
                 List<Weapon> weapons = new List<Weapon>();
                 foreach (var prefab in startSet)
                 {
-                    var parent = _runtimeData.WeaponView.Parent;
+                    var parent = _runtimeData.Hand.Parent;
                     var weapon = GameObject.Instantiate(prefab, parent);
 
                     weapon.gameObject.SetActive(false);

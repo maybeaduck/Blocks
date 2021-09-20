@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Block level 1
   m_EditorClassIdentifier: 
   TimeToDistruction: 1
-  Level: 3
+  Level: 1
   Name: TestBlock
   Ico: {fileID: 0}

@@ -9,5 +9,6 @@ namespace Zlodey
         public Camera Camera;
 
         public List<Weapon> StartSetWeapons;
+        public ParticleSystem DistructionFx;
     }
 }

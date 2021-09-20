@@ -51,11 +51,14 @@ namespace Zlodey
                 .Add(new WeaponSpeedSystem())
 
                 .Add(new CheckBlockSystem())
+                .Add(new BlockSelectSystem())
                 .Add(new BlockDistructionSystem())
+                .Add(new BlockHitAnimationSystem())
                 .Add(new BlockReductionSystem())
 
                 .OneFrame<RayHitEvent>()
                 .OneFrame<BlockHitEvent>()
+                .OneFrame<HitEvent>()
 
                 .Inject(_runtimeData)
                 .Inject(_config)
