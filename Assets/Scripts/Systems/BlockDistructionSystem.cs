@@ -2,7 +2,7 @@
 using UnityEngine;
 using DG.Tweening;
 
-namespace Zlodey
+namespace LittleFroggyHat
 {
     public class CheckBlockSystem : Injects, IEcsRunSystem
     {
@@ -64,56 +64,114 @@ namespace Zlodey
     public class BlockDistructionSystem : Injects, IEcsRunSystem
     {
         private EcsFilter<BlockComponent, BlockHitEvent>.Exclude<DistructionFlag> _filter;
+        private EcsFilter<BlockComponent, BlockHitEvent,DestroyTime>.Exclude<DistructionFlag> _destroy;
 
         public void Run()
         {
+            foreach (var i in _destroy)
+            {
+                ref var destroyTime =ref _destroy.Get3(i);
+                ref var block = ref _destroy.Get1(i).Block;
+                ref var entity = ref _destroy.GetEntity(i);
+                if (destroyTime.time < destroyTime.durability)
+                {
+                    destroyTime.timer += Time.deltaTime;
+                    destroyTime.time = destroyTime.timer % 60;
+                    Debug.Log(destroyTime.timer % 60);
+                }
+                else
+                {
+                    block.Distruction();
+                    _sceneData.DistructionFx.transform.position = block.transform.position;
+                    _sceneData.DistructionFx.Play();
+                    entity.Del<DestroyTime>();
+                    Debug.Log("Distrution");
+                    
+                }
+            }
+
             foreach (var item in _filter)
             {
                 ref var entity = ref _filter.GetEntity(item);
-                ref var block = ref _filter.Get1(item).Block;
-                var timeToDistruction = block.BlockData.TimeToDistruction;
-
-                if (!entity.Has<TimeDistructionComponent>()) entity.Get<TimeDistructionComponent>().StartTime = Time.time;
-                var startTime = entity.Get<TimeDistructionComponent>().StartTime;
-
-                var levelBlock = block.BlockData.Level;
-                var levelWeapon = _runtimeData.CurrentWeapon.WeaponData.Level;
-                var levelDelta = levelBlock - levelWeapon;
-                var debtValue = 1f;
-
-
-                if (levelDelta > 0)
+                
+                ref var blockData = ref _filter.Get1(item).Block.BlockData;
+                ref var tool = ref _runtimeData.CurrentWeapon.WeaponData;
+                float speedMultiplier = 1;
+                float damage = speedMultiplier / blockData.Hardness;
+                bool canHarvest = tool.Level >= blockData.LevelToHarvest;
+                
+                
+                if (blockData.BestTool == tool.Type)
                 {
-                    var debts = _staticData.Debts;
-                    foreach (var debt in debts)
+                    foreach (var toolM in _staticData.ToolMultiplier)
                     {
-                        if (debt.Level == levelDelta)
+                        if (toolM.Level == tool.Level)
                         {
-                            debtValue = debt.Value;
-                            break;
+                            speedMultiplier = toolM.Mul;
+                            
                         }
+                    }
+                    
+                    if (!canHarvest)
+                    {
+                        speedMultiplier = 1;
+                        
+                    }
+                    
+                    if (tool.ToolEfficiency > 0)
+                    {
+                        speedMultiplier += Mathf.Pow(tool.ToolEfficiency, 2) + 1;
                     }
                 }
 
-                //Debug.Log($"levelWeapon {levelWeapon} : levelBlock {levelBlock} : levelDelta {levelDelta}");
-                //Debug.Log($"timeHasPassed {timeHasPassed} : timeToDistruction {timeToDistruction}");
-                //Debug.Log($"debtValue {debtValue}");
-
-                entity.Get<TimeDistructionComponent>().TimeHasPassed = (Time.time - startTime) * debtValue;
-                var timeHasPassed = entity.Get<TimeDistructionComponent>().TimeHasPassed;
-                if (timeHasPassed >= timeToDistruction)
+                damage = speedMultiplier / blockData.Hardness;
+                if (canHarvest)
                 {
-                    block.Distruction();
-
-                    _sceneData.DistructionFx.transform.position = block.transform.position;
-                    _sceneData.DistructionFx.Play();
-
-                    Debug.Log("Distrution");
+                    damage /= 30;
                 }
+                else
+                {
+                    damage /= 100;
+                }
+
+                if (damage > 1)
+                {
+                    Debug.Log("Instant");
+                    //Destroy Instant
+                }
+
+                float ticks = 1 / damage;
+                float seconds = ticks / 20;
+                ref var destroyTime = ref entity.Get<DestroyTime>();
+                if (!destroyTime.start)
+                {
+                    destroyTime.time = 0.0f;
+                    destroyTime.timer = 0.0f;
+
+                    destroyTime.start = true;
+                }
+                destroyTime.durability = seconds;
+                Debug.Log(seconds);
+                
+                
+                //haste effect
+
+                //miningFatigue
+                
+
+                
             }
         }
     }
-    
+
+    public struct DestroyTime
+    {
+        public float durability;
+        public float time;
+        public float timer;
+        public bool start;
+    }
+
     public class BlockHitAnimationSystem : Injects, IEcsRunSystem
     {
         private EcsFilter<BlockComponent, BlockHitEvent>.Exclude<DistructionFlag> _filter;
@@ -144,7 +202,7 @@ namespace Zlodey
             foreach (var item in _filter)
             {
                 ref var entity = ref _filter.GetEntity(item);
-                if (entity.Has<TimeDistructionComponent>()) entity.Del<TimeDistructionComponent>();
+                if (entity.Has<DestroyTime>()) entity.Del<DestroyTime>();
             }
         }
     }

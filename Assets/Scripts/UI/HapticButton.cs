@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using Zlodey;
+using LittleFroggyHat;
 using LeopotamGroup.Globals;
 
-namespace Zlodey
+namespace LittleFroggyHat
 {
     public class HapticButton : Screen
     {

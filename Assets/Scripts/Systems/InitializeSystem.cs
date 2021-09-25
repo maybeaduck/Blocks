@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
-using Zlodey;
+using LittleFroggyHat;
 using Leopotam.Ecs;
 using LeopotamGroup.Globals;
 using UnityEngine;
 
-namespace Zlodey
+namespace LittleFroggyHat
 {
     public class InitializeSystem : Injects, IEcsInitSystem
     {

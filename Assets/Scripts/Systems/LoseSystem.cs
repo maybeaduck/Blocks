@@ -1,9 +1,9 @@
-﻿using Zlodey;
+﻿using LittleFroggyHat;
 using Leopotam.Ecs;
 using Sorty48;
 using TMPro;
 
-namespace Zlodey
+namespace LittleFroggyHat
 {
     public class LoseSystem : Injects, IEcsRunSystem
     {

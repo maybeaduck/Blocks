@@ -1,12 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
-using Zlodey;
+using LittleFroggyHat;
 using Leopotam.Ecs;
 using LeopotamGroup.Globals;
 using UnityEngine;
 
-namespace Zlodey
+namespace LittleFroggyHat
 {
     sealed class EcsStartup : MonoBehaviour
     {
@@ -37,6 +37,7 @@ namespace Zlodey
             _systems
                 .Add(new InitializeSystem())
                 .Add(new CameraRotateSystem())
+                .Add(new MoveServiceSystem())
                 .Add(new WinSystem())
                 .Add(new LoseSystem())
                 .Add(new StartGameSystem())
@@ -44,12 +45,12 @@ namespace Zlodey
 
                 .Add(new InputSystem())
                 .Add(new SwipeSystem())
-
+                
                 .Add(new ChangeWeaponSystem())
                 .Add(new SetWeaponSystem())
                 .Add(new WeaponAttackSystem())
                 .Add(new WeaponSpeedSystem())
-
+                
                 .Add(new CheckBlockSystem())
                 .Add(new BlockSelectSystem())
                 .Add(new BlockDistructionSystem())

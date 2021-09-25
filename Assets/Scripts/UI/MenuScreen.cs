@@ -1,9 +1,9 @@
-﻿using Zlodey;
+﻿using LittleFroggyHat;
 using Leopotam.Ecs;
 using LeopotamGroup.Globals;
 using UnityEngine.UI;
 
-namespace Zlodey
+namespace LittleFroggyHat
 {
     public class MenuScreen : Screen
     {

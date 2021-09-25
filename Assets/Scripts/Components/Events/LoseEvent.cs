@@ -1,5 +1,5 @@
 ﻿
-namespace Zlodey
+namespace LittleFroggyHat
 {
     public struct LoseEvent
     {

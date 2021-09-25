@@ -1,4 +1,4 @@
-﻿namespace Zlodey
+﻿namespace LittleFroggyHat
 {
     internal struct BlockHitEvent
     {

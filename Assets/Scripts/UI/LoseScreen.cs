@@ -2,7 +2,7 @@
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-namespace Zlodey
+namespace LittleFroggyHat
 {
     public class LoseScreen : Screen
     {

@@ -77,8 +77,8 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _RampSmooth: 0.053
-    - _RampThreshold: 0.551
+    - _RampSmooth: 0.001
+    - _RampThreshold: 0
     - _RimMax: 1
     - _RimMin: 0.5
     - _Smoothness: 0.2
@@ -94,6 +94,6 @@ Material:
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _HColor: {r: 1, g: 1, b: 1, a: 1}
     - _RimColor: {r: 0.8, g: 0.8, b: 0.8, a: 0.6}
-    - _SColor: {r: 0.16037738, g: 0.16037738, b: 0.16037738, a: 1}
+    - _SColor: {r: 0.5294118, g: 0.5294118, b: 0.5294118, a: 1}
     - _SpecColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_BuildTextureStacks: []

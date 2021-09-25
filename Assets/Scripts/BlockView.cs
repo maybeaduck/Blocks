@@ -3,7 +3,7 @@ using LeopotamGroup.Globals;
 using System.Collections;
 using UnityEngine;
 
-namespace Zlodey
+namespace LittleFroggyHat
 {
     public class BlockView : MonoBehaviour
     {

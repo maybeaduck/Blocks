@@ -1,11 +1,11 @@
-﻿using Zlodey;
+﻿using LittleFroggyHat;
 using Leopotam.Ecs;
 using UnityEngine;
 using UnityEngine.Rendering;
 using System;
 using System.Collections.Generic;
 
-namespace Zlodey
+namespace LittleFroggyHat
 {
     [Serializable]
     public class RuntimeData
@@ -29,5 +29,6 @@ namespace Zlodey
         public AudioSource AudioSource;
         public GameState GameState;
         public EcsEntity InputEntity;
+        public float ThisBlockSpeed;
     }
 }

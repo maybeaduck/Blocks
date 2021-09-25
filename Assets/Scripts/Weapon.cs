@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Zlodey
+namespace LittleFroggyHat
 {
     public class Weapon : MonoBehaviour
     {
@@ -10,8 +10,8 @@ namespace Zlodey
     
     public enum WeaponType
     {
-        PickAxeWood,
-        PickAxeIron,
-        PickAxeGold
+        Pickaxe,
+        Axe,
+        
     }
 }

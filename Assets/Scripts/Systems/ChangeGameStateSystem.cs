@@ -1,8 +1,8 @@
 ﻿using System;
-using Zlodey;
+using LittleFroggyHat;
 using Leopotam.Ecs;
 using UnityEngine;
-namespace Zlodey
+namespace LittleFroggyHat
 {
     public class ChangeGameStateSystem : Injects, IEcsRunSystem
     {

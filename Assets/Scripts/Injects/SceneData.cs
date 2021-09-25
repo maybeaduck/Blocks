@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace Zlodey
+namespace LittleFroggyHat
 {
     public class SceneData : MonoBehaviour
     {

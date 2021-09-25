@@ -1,6 +1,6 @@
 ﻿using Leopotam.Ecs;
 
-namespace Zlodey
+namespace LittleFroggyHat
 {
     public class WeaponSpeedSystem : Injects, IEcsRunSystem
     {
@@ -8,8 +8,8 @@ namespace Zlodey
         {
             if (_runtimeData.CurrentWeapon)
             {
-                var speed = _runtimeData.CurrentWeapon.WeaponData.Speed;
-                _runtimeData.Hand.Animator.speed = speed;
+                // var speed = _staticData.WeaponModifier;
+                // _runtimeData.Hand.Animator.speed = speed;
             }
         }
     }

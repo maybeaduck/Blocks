@@ -1,7 +1,7 @@
 using Leopotam.Ecs;
 using UnityEngine;
 
-namespace Zlodey
+namespace LittleFroggyHat
 {
     public enum Side
     {
@@ -14,9 +14,6 @@ namespace Zlodey
         {
             foreach (var item in _swipe)
             {
-                
-                //запомнить координаты нажатия
-                //слайд в сторону 
                 ref var swipeData = ref _swipe.Get1(item);
 
                 if (swipeData.startSwipe)

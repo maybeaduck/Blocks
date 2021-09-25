@@ -1,7 +1,7 @@
 ﻿using Leopotam.Ecs;
 using UnityEngine.Playables;
 
-namespace Zlodey
+namespace LittleFroggyHat
 {
     public class WinSystem : Injects, IEcsRunSystem
     {

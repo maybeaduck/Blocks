@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace Zlodey
+namespace LittleFroggyHat
 {
     public class Boot : MonoBehaviour
     {

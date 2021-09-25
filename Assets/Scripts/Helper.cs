@@ -4,7 +4,7 @@ using LeopotamGroup.Globals;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Zlodey {
+namespace LittleFroggyHat {
     public class Helper
     {
         public static void LoadNextLevel()

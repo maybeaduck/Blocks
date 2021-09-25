@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8010199396e156b44b04c60a85e745d5, type: 3}
   m_Name: Grass
   m_EditorClassIdentifier: 
-  TimeToDistruction: 1
-  Level: 3
+  Hardness: 0.6
+  LevelToHarvest: 0
+  BestTool: 0
   Name: Grass
   Ico: {fileID: 0}

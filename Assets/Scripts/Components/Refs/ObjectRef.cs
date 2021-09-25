@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Zlodey {
+namespace LittleFroggyHat {
     struct ObjectRef
     {
         public GameObject Value;

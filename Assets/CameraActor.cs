@@ -14,7 +14,8 @@ public class CameraActor : MonoBehaviour
         entity = Service<EcsWorld>.Get().NewEntity();
         entity.Get<CameraData>() = new CameraData()
         {
-            actor = this
+            actor = this,
+            rotation = this.transform.localEulerAngles
         };
     }
 }
@@ -22,4 +23,6 @@ public class CameraActor : MonoBehaviour
 internal struct CameraData
 {
     public CameraActor actor;
+    public int xpos;
+    public Vector3 rotation;
 }

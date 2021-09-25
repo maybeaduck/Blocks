@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using Zlodey;
+using LittleFroggyHat;
 using Leopotam.Ecs;
 using LeopotamGroup.Globals;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Zlodey
+namespace LittleFroggyHat
 {
     public class GameScreen : Screen
     {

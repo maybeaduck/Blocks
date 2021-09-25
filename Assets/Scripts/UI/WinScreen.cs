@@ -1,10 +1,10 @@
-﻿using Zlodey;
+﻿using LittleFroggyHat;
 using LeopotamGroup.Globals;
 using TMPro;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-namespace Zlodey
+namespace LittleFroggyHat
 {
     public class WinScreen : Screen
     {

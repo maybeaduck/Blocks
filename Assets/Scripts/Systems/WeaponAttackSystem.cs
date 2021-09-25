@@ -1,6 +1,6 @@
 ﻿using Leopotam.Ecs;
 
-namespace Zlodey
+namespace LittleFroggyHat
 {
     public class WeaponAttackSystem : Injects, IEcsRunSystem
     {

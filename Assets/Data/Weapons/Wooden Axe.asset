@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wooden Axe
   m_EditorClassIdentifier: 
   Type: 0
-  Speed: 1
   Level: 1
+  ToolEfficiency: 0
   Name: Wooden Axe
   Ico: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}

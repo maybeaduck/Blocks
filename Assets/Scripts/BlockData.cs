@@ -2,14 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Zlodey
+namespace LittleFroggyHat
 {
     [CreateAssetMenu()]
     public class BlockData : ScriptableObject
     {
-        public float TimeToDistruction;
-        public int Level;
-
+        public float Hardness;
+        public WeaponLevel LevelToHarvest;
+        public WeaponType BestTool;
+        
         public string Name;
         public Sprite Ico;
     }

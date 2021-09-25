@@ -1,7 +1,7 @@
 ﻿using Leopotam.Ecs;
 using UnityEngine;
 
-namespace Zlodey
+namespace LittleFroggyHat
 {
     public class ChangeWeaponSystem : Injects, IEcsRunSystem
     {

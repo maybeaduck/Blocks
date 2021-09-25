@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Zlodey
+namespace LittleFroggyHat
 {
     public class Block : MonoBehaviour
     {

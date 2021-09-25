@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 
-namespace Zlodey
+namespace LittleFroggyHat
 {
     static class Progress
     {

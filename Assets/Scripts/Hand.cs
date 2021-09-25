@@ -2,7 +2,7 @@
 using LeopotamGroup.Globals;
 using UnityEngine;
 
-namespace Zlodey
+namespace LittleFroggyHat
 {
     public class Hand : MonoBehaviour
     {

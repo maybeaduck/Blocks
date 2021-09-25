@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using Zlodey;
+using LittleFroggyHat;
 using Leopotam.Ecs;
 using LeopotamGroup.Globals;
 namespace Sorty48
