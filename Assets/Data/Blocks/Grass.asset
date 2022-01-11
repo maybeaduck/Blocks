@@ -15,5 +15,9 @@ MonoBehaviour:
   Hardness: 0.6
   LevelToHarvest: 0
   BestTool: 0
+  Prefub: {fileID: 5940614128712920492, guid: ac3257b749d3214489186f3310dcdd1c, type: 3}
+  ItemDrop:
+    item: {fileID: 11400000, guid: edb09ba6b8f6c484f9869ec6111528d6, type: 2}
+    minDropCount: 1
+    maxDropCount: 1
   Name: Grass
-  Ico: {fileID: 0}

@@ -15,5 +15,9 @@ MonoBehaviour:
   Hardness: 0.2
   LevelToHarvest: 0
   BestTool: 1
+  Prefub: {fileID: 5104462772434638473, guid: 1ed23f8a2a5029a44a68264fcf67ba61, type: 3}
+  ItemDrop:
+    item: {fileID: 11400000, guid: 109cc1ed27d2ece44adf1029596c3a82, type: 2}
+    minDropCount: 1
+    maxDropCount: 1
   Name: OakLeave
-  Ico: {fileID: 0}

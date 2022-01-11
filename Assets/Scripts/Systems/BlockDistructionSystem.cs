@@ -65,9 +65,25 @@ namespace LittleFroggyHat
     {
         private EcsFilter<BlockComponent, BlockHitEvent>.Exclude<DistructionFlag> _filter;
         private EcsFilter<BlockComponent, BlockHitEvent,DestroyTime>.Exclude<DistructionFlag> _destroy;
+        private EcsFilter<BlockComponent, BlockHitEvent,InstantDestroy>.Exclude<DistructionFlag> _instanceDestroy;
 
+        public void BlockDestroy(BlockView block,EcsEntity entity)
+        {
+            block.Distruction();
+            _sceneData.DistructionFx.transform.position = block.transform.position;
+            _sceneData.DistructionFx.Play();
+            entity.Del<DestroyTime>();
+            Debug.Log("Distrution");
+        }
         public void Run()
         {
+            foreach (var i in _instanceDestroy)
+            {
+                ref EcsEntity entity =ref _instanceDestroy.GetEntity(i);
+                ref var block = ref _instanceDestroy.Get1(i).Block;
+                BlockDestroy(block,entity);
+                entity.Del<InstantDestroy>();
+            }
             foreach (var i in _destroy)
             {
                 ref var destroyTime =ref _destroy.Get3(i);
@@ -81,12 +97,7 @@ namespace LittleFroggyHat
                 }
                 else
                 {
-                    block.Distruction();
-                    _sceneData.DistructionFx.transform.position = block.transform.position;
-                    _sceneData.DistructionFx.Play();
-                    entity.Del<DestroyTime>();
-                    Debug.Log("Distrution");
-                    
+                    BlockDestroy(block, entity);
                 }
             }
 
@@ -99,7 +110,7 @@ namespace LittleFroggyHat
                 float speedMultiplier = 1;
                 float damage = speedMultiplier / blockData.Hardness;
                 bool canHarvest = tool.Level >= blockData.LevelToHarvest;
-                
+                bool instant = false;
                 
                 if (blockData.BestTool == tool.Type)
                 {
@@ -137,7 +148,8 @@ namespace LittleFroggyHat
                 if (damage > 1)
                 {
                     Debug.Log("Instant");
-                    //Destroy Instant
+                    instant = true;
+
                 }
 
                 float ticks = 1 / damage;
@@ -151,6 +163,10 @@ namespace LittleFroggyHat
                     destroyTime.start = true;
                 }
                 destroyTime.durability = seconds;
+                if (instant)
+                {
+                    entity.Get<InstantDestroy>();
+                }
                 Debug.Log(seconds);
                 
                 
@@ -162,6 +178,10 @@ namespace LittleFroggyHat
                 
             }
         }
+    }
+
+    public struct InstantDestroy
+    {
     }
 
     public struct DestroyTime

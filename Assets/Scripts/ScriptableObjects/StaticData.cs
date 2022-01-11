@@ -20,6 +20,10 @@ namespace LittleFroggyHat
         public List<Debts> Debts;
         
         public List<ToolMultiplier> ToolMultiplier;
+        public Vector3 itemSize;
+        public LayerMask BlockLayer;
+        public float itemJumpPower;
+        public float itemJumpDuration;
     }
     [Serializable]
     public class ToolMultiplier

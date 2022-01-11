@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6888676796367416355}
   - component: {fileID: 2766387322397776573}
   - component: {fileID: 6008403847510591074}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 9143462073799696014}
   - component: {fileID: 5687213926642370678}
   - component: {fileID: 5144126696286300667}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: OakLog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,8 +126,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d74daf275e71425418344de88ba70311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BlockType: 0
+  Stair:
+    State: []
+    UpState: []
+    StateOutAngle: []
+    UpStateOutAngle: []
+    StateInAngle: []
+    UpStateInAngle: []
+  Half:
+    State: {fileID: 0}
+    UpState: {fileID: 0}
   BlockData: {fileID: 11400000, guid: ffaa519f2ec2ef74e931622b92f6a4af, type: 2}
-  Loot: {fileID: 0}
+  MeshRenderer: {fileID: 0}
 --- !u!65 &5144126696286300667
 BoxCollider:
   m_ObjectHideFlags: 0

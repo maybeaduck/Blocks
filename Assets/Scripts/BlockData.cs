@@ -1,4 +1,5 @@
 ﻿
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,8 +11,18 @@ namespace LittleFroggyHat
         public float Hardness;
         public WeaponLevel LevelToHarvest;
         public WeaponType BestTool;
-        
+        public BlockView Prefub;
+        public Loot ItemDrop;
         public string Name;
-        public Sprite Ico;
+        
+    }
+    
+    
+    [Serializable]
+    public class Loot
+    {
+        public Item item;
+        public int minDropCount;
+        public int maxDropCount;
     }
 }

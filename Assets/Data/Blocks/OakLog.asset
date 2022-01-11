@@ -15,5 +15,9 @@ MonoBehaviour:
   Hardness: 2
   LevelToHarvest: 0
   BestTool: 1
+  Prefub: {fileID: 5687213926642370678, guid: 86b8abccec67299428b2ab0a76dec328, type: 3}
+  ItemDrop:
+    item: {fileID: 11400000, guid: 212ba05fbd4292f409f874d7b9be0f5e, type: 2}
+    minDropCount: 1
+    maxDropCount: 1
   Name: OakLog
-  Ico: {fileID: 0}

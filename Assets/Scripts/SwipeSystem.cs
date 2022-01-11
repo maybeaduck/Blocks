@@ -12,6 +12,7 @@ namespace LittleFroggyHat
         private EcsFilter<SwipeData> _swipe;
         public void Run()
         {
+            if (!_sceneData.SlideScene) return;
             foreach (var item in _swipe)
             {
                 ref var swipeData = ref _swipe.Get1(item);

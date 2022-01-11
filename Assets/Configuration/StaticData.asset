@@ -41,3 +41,9 @@ MonoBehaviour:
     Mul: 6
   - Level: 4
     Mul: 8
+  itemSize: {x: 1, y: 1, z: 1}
+  BlockLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  itemJumpPower: 0.49
+  itemJumpDuration: 1

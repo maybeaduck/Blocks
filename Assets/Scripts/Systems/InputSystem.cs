@@ -4,32 +4,45 @@ using UnityEngine;
 
 namespace LittleFroggyHat
 {
+    public enum SideBlock
+    {
+        None,Top,Bottom,Left,Right,Front,Back
+    }
     public class InputSystem : Injects, IEcsRunSystem
     {
         public void Run()
         {
+            if (Input.GetMouseButton(1))
+            {
+                
+            
+            }
             if (Input.GetMouseButton(0))
             {
                 Ray ray = _sceneData.Camera.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
-                if (Physics.Raycast(ray, out hit)&&  !_sceneData.CameraRotate.entity.Has<RotateCamera>() )
+                if (Physics.Raycast(ray, out hit,99999f,_staticData.BlockLayer) &&  !_sceneData.CameraRotate.entity.Has<RotateCamera>() )
                 {
+                    
                     _runtimeData.IsAttack = true;      
                 }
-                      
+            
             }
             else
             {
-                _runtimeData.IsAttack = false;       
+                _runtimeData.IsAttack = false;
             }
             
             
             if (_runtimeData.IsAttack &&  !_sceneData.CameraRotate.entity.Has<RotateCamera>())
             {
                 Ray ray = _sceneData.Camera.ScreenPointToRay(Input.mousePosition);
+                
                 RaycastHit hit;
-                if (Physics.Raycast(ray, out hit))
+                if (Physics.Raycast(ray, out hit,99999f,_staticData.BlockLayer))
                 {
+                    _sceneData.TestBlock.transform.position =
+                        hit.collider.gameObject.transform.position;
                     _world.NewEntity().Get<RayHitEvent>().Hit = hit;
                 }
             }
@@ -38,7 +51,7 @@ namespace LittleFroggyHat
             {
                 Ray ray = _sceneData.Camera.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
-                if (Physics.Raycast(ray,out hit))
+                if (Physics.Raycast(ray,out hit,99999f,_staticData.BlockLayer))
                 {
                     _runtimeData.StartHitPosition = _runtimeData.Hand.transform.position;
                 }

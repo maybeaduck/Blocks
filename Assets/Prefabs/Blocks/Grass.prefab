@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4264783405839300717}
   - component: {fileID: 4264783405839300719}
   - component: {fileID: 4264783405839300716}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -92,7 +92,7 @@ GameObject:
   - component: {fileID: 4264783406020783041}
   - component: {fileID: 5940614128712920492}
   - component: {fileID: 4493309413219668053}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Grass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,8 +126,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d74daf275e71425418344de88ba70311, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  BlockType: 0
+  Stair:
+    State: []
+    UpState: []
+    StateOutAngle: []
+    UpStateOutAngle: []
+    StateInAngle: []
+    UpStateInAngle: []
+  Half:
+    State: {fileID: 0}
+    UpState: {fileID: 0}
   BlockData: {fileID: 11400000, guid: e195bf0ff3371f641b7a868dc72f38a6, type: 2}
-  Loot: {fileID: 0}
   MeshRenderer: {fileID: 4264783405839300716}
 --- !u!65 &4493309413219668053
 BoxCollider:
