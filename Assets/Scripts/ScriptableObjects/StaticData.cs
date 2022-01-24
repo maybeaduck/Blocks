@@ -24,6 +24,14 @@ namespace LittleFroggyHat
         public LayerMask BlockLayer;
         public float itemJumpPower;
         public float itemJumpDuration;
+        public float endSize;
+        public float sizeDuration;
+        public AnimationCurve moveEase;
+        public AnimationCurve sizeEase;
+        public float intervalDropAnimation;
+        public float randomOffset;
+        public float endPointRandomOffset;
+        
     }
     [Serializable]
     public class ToolMultiplier

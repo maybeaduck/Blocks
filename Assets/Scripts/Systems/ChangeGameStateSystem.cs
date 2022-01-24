@@ -16,33 +16,25 @@ namespace LittleFroggyHat
                 {
                     case GameState.BeforePlay:
                         Debug.Log("BeforePlay");
-                        _ui.MenuScreen.Show();
-                        _ui.WinScreen.Hide();
-                        _ui.LoseScreen.Hide();
-                        _ui.GameScreen.Hide();
+                        
+                        _ui.GameScreen.Show();
 
                         break;
                     case GameState.Play:
                         Debug.Log("Play");
-                        _ui.MenuScreen.Hide();
-                        _ui.WinScreen.Hide();
-                        _ui.LoseScreen.Hide();
+                        
                         _ui.GameScreen.Show();
                         break;
 
                     case GameState.Win:
                         Debug.Log("Win");
-                        _ui.MenuScreen.Hide();
-                        _ui.WinScreen.Show();
-                        _ui.LoseScreen.Hide();
+                        
                         _ui.GameScreen.Hide();
                         break;
 
                     case GameState.Lose:
                         Debug.Log("Lose");
-                        _ui.MenuScreen.Hide();
-                        _ui.WinScreen.Hide();
-                        _ui.LoseScreen.Show();
+                        
                         _ui.GameScreen.Hide();
                         break;
 

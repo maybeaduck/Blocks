@@ -62,14 +62,24 @@ namespace LittleFroggyHat
                 if (a)
                 {
                     var staticData = Service<StaticData>.Get();
-                    a.transform.DOJump(Service<SceneData>.Get().ItemPoint.position, staticData.itemJumpPower, 1,
-                        staticData.itemJumpDuration).OnComplete(a.Disable);
+                    var interval = staticData.intervalDropAnimation +
+                                   Random.Range(-staticData.randomOffset, staticData.randomOffset);
+                    var endPoint = Service<SceneData>.Get().ItemPoint.position + Vector3.one * Random.Range(-staticData.randomOffset,staticData.randomOffset);
+                    Sequence sequence = DOTween.Sequence();
+                    sequence.PrependInterval(interval);
+                    sequence.Append(a.scaledObject.transform.DOScale(staticData.endSize, staticData.sizeDuration)
+                        .SetEase(Ease.InOutSine));
+                    sequence.Insert(interval,a.transform.DOJump(endPoint,
+                        staticData.itemJumpPower, 1,
+                        staticData.itemJumpDuration).OnComplete(a.Disable));
+                    
+                    
                 }
             }
             
             gameObject.SetActive(false);
         }
 
-        
+
     }
 }

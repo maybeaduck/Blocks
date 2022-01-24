@@ -30,14 +30,7 @@ namespace LittleFroggyHat
                 base._runtimeData.AudioSource = spawnedAudioSource;
             }
 
-            if (Progress.CurentSound == 0)
-            {
-                _ui.MenuScreen.SoundButton.SwitchImage();
-            }
-            if (Progress.CurentHaptic == 0)
-            {
-                _ui.MenuScreen.HapticButton.SwitchImage();
-            }
+            
             if (Progress.CurentHaptic == 0)
             {
                 base._runtimeData.HapticOn = false;

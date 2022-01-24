@@ -11,7 +11,7 @@ namespace LittleFroggyHat
     {
         public Item itemData;
         public EcsEntity Entity;
-        
+        public Transform scaledObject;
         
         private void Start()
         {
@@ -28,6 +28,7 @@ namespace LittleFroggyHat
 
         public void Disable()
         {
+            
             gameObject.SetActive(false);
         }
     }

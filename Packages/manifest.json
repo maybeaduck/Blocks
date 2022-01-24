@@ -4,6 +4,7 @@
     "com.leopotam.ecs": "https://github.com/Leopotam/ecs.git",
     "com.leopotam.ecs-unityintegration": "https://github.com/Leopotam/ecs-unityintegration.git",
     "com.leopotam.globals": "https://github.com/Leopotam/globals.git",
+    "com.unity.2d.sprite": "1.0.0",
     "com.unity.cinemachine": "2.7.2",
     "com.unity.collab-proxy": "1.9.0",
     "com.unity.ide.rider": "2.0.7",

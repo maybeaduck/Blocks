@@ -17,5 +17,6 @@ namespace LittleFroggyHat
         //TEST
         public BlockData SpawnBlock;
         public Transform ItemPoint;
+        public ChestImageActor chestUI;
     }
 }
