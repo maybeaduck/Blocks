@@ -18,5 +18,6 @@ namespace LittleFroggyHat
         public BlockData SpawnBlock;
         public Transform ItemPoint;
         public ChestImageActor chestUI;
+        public Inventory Inventory;
     }
 }

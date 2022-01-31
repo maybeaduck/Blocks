@@ -12,6 +12,7 @@ namespace LittleFroggyHat
     {
         Pickaxe,
         Axe,
-        
+        Shovel,
+        Hoe
     }
 }

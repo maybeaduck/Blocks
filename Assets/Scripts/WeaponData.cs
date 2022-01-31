@@ -17,6 +17,6 @@ namespace LittleFroggyHat
 
     public enum WeaponLevel
     {
-        None,Wood,Stone,Iron,Diamond
+        None,Wood,Stone,Iron,Gold,Diamond
     }
 }

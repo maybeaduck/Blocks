@@ -17,3 +17,4 @@ MonoBehaviour:
   sprite: {fileID: 2800000, guid: 23432f901ec2f0548a335846bc8e07c6, type: 3}
   type: 2
   blockView: {fileID: 11400000, guid: ffaa519f2ec2ef74e931622b92f6a4af, type: 2}
+  stackSize: 64

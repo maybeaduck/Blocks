@@ -10,7 +10,7 @@ namespace LittleFroggyHat
         public Texture sprite;
         public ItemType type;
         public BlockData blockView;
-        
+        public int stackSize = 64;
     }
 
     public enum ItemType

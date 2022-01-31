@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5ebf8999be64e3f4ba26943ed6730550, type: 3}
-  m_Name: Gold Axe
+  m_Name: Wooden Pickaxe
   m_EditorClassIdentifier: 
   Type: 0
-  Level: 2
+  Level: 1
   ToolEfficiency: 0
-  Name: Gold Axe
+  Name: Wooden Axe
   Ico: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}

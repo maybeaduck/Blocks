@@ -51,35 +51,29 @@ namespace LittleFroggyHat
 
             MeshRenderer = GetComponentInChildren<MeshRenderer>();
         }
-
+        
         public void Distruction()
         {
             Entity.Get<DistructionFlag>();
             var o = Random.Range(BlockData.ItemDrop.minDropCount, BlockData.ItemDrop.maxDropCount);
             for (int i = 0; i < o; i++)
             {
-                var a = ItemSpawner.SpawnItem(BlockData.ItemDrop.item,transform.position,transform.rotation);
-                if (a)
-                {
-                    var staticData = Service<StaticData>.Get();
-                    var interval = staticData.intervalDropAnimation +
-                                   Random.Range(-staticData.randomOffset, staticData.randomOffset);
-                    var endPoint = Service<SceneData>.Get().ItemPoint.position + Vector3.one * Random.Range(-staticData.randomOffset,staticData.randomOffset);
-                    Sequence sequence = DOTween.Sequence();
-                    sequence.PrependInterval(interval);
-                    sequence.Append(a.scaledObject.transform.DOScale(staticData.endSize, staticData.sizeDuration)
-                        .SetEase(Ease.InOutSine));
-                    sequence.Insert(interval,a.transform.DOJump(endPoint,
-                        staticData.itemJumpPower, 1,
-                        staticData.itemJumpDuration).OnComplete(a.Disable));
-                    
-                    
-                }
+                ItemController.CreateItem(BlockData.ItemDrop.item,transform.position);
             }
             
             gameObject.SetActive(false);
         }
 
 
+    }
+    
+    public struct ItemViewData
+    {
+        public ItemView View;
+    }
+
+    public struct ItemData
+    {
+        public Item item;
     }
 }

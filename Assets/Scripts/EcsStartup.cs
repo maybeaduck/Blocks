@@ -1,10 +1,11 @@
 using System.Collections;
-using System.Collections.Generic;
-using DG.Tweening;
+using System.Security.Policy;
 using LittleFroggyHat;
 using Leopotam.Ecs;
 using LeopotamGroup.Globals;
 using UnityEngine;
+using UnityEngine.UI;
+using Object = System.Object;
 
 namespace LittleFroggyHat
 {
@@ -43,6 +44,24 @@ namespace LittleFroggyHat
                 .Add(new StartGameSystem())
                 .Add(new ChangeGameStateSystem())
                 
+                
+
+                #region ItemSystems
+
+                .Add(new DropAnimationItemSystem())
+                .Add(new CollectItemSystem())
+                
+                #endregion
+                
+                #region InventorySystems
+                .Add(new StackSystem())
+                .Add(new InventorySystem())
+                
+
+                #endregion
+                
+                
+                
                 .Add(new InputSystem())
                 .Add(new SwipeSystem())
 
@@ -56,6 +75,7 @@ namespace LittleFroggyHat
                 .Add(new CheckBlockSystem())
                 .Add(new BlockSelectSystem())
                 .Add(new BlockDistructionSystem())
+                .Add(new RemoveDestroyedBlock())
                 .Add(new BlockHitAnimationSystem())
                 .Add(new BlockReductionSystem())
                 
@@ -97,4 +117,7 @@ namespace LittleFroggyHat
             }
         }
     }
+
+
+    
 }

@@ -10,26 +10,13 @@ namespace LittleFroggyHat
     public class ItemView : MonoBehaviour
     {
         public Item itemData;
-        public EcsEntity Entity;
         public Transform scaledObject;
         
-        private void Start()
-        {
-            if (!Entity.IsNull())
-            {
-                SpawnEntity();
-            }
-        }
-
-        private void SpawnEntity()
-        {
-            Entity = Service<EcsWorld>.Get().NewEntity();
-        }
-
         public void Disable()
         {
-            
             gameObject.SetActive(false);
+            
+            Destroy(gameObject);
         }
     }
 }
