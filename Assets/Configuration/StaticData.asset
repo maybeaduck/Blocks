@@ -142,6 +142,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  intervalDropAnimation: 0.8
-  randomOffset: 0.05
+  intervalDropAnimation: 1.5
+  randomOffset: 0.1
   endPointRandomOffset: 0.03

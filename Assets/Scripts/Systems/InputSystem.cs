@@ -23,10 +23,14 @@ namespace LittleFroggyHat
                 RaycastHit hit;
                 if (Physics.Raycast(ray, out hit,99999f,_staticData.BlockLayer) &&  !_sceneData.CameraRotate.entity.Has<RotateCamera>() )
                 {
-                    
+                    if (hit.collider.CompareTag("InGamePopUp"))
+                    {
+                        hit.collider.GetComponent<InGameButton>().ClickOnPopUp();
+                    }    
                     _runtimeData.IsAttack = true;      
                 }
-            
+                
+                
             }
             else
             {

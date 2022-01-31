@@ -44,8 +44,6 @@ namespace LittleFroggyHat
                 .Add(new StartGameSystem())
                 .Add(new ChangeGameStateSystem())
                 
-                
-
                 #region ItemSystems
 
                 .Add(new DropAnimationItemSystem())
@@ -56,15 +54,13 @@ namespace LittleFroggyHat
                 #region InventorySystems
                 .Add(new StackSystem())
                 .Add(new InventorySystem())
-                
 
                 #endregion
-                
-                
                 
                 .Add(new InputSystem())
                 .Add(new SwipeSystem())
 
+                .Add(new PopupSystem())
                 .Add(new ChangeWeaponSystem())
                 .Add(new SetWeaponSystem())
                 .Add(new WeaponAttackSystem())
@@ -118,6 +114,22 @@ namespace LittleFroggyHat
         }
     }
 
+    internal class PopupSystem : Injects, IEcsRunSystem
+    {
+        public EcsFilter<ShowPopUp> _popup;
+        public void Run()
+        {
+            foreach (var i in _popup)
+            {
+                ref var showPopUp =ref _popup.Get1(i);
 
-    
+                switch (showPopUp.type)
+                {
+                    case PopupType.CraftTable :
+                        _ui.CraftTablePopup.Show();
+                        break;
+                }
+            }
+        }
+    }
 }

@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c63eaaeb530840439535b38ecd4800e5, type: 3}
+  m_Name: DirtItem
+  m_EditorClassIdentifier: 
+  id: dirt
+  Visual: {fileID: 4264783406020783054, guid: 068c7d020d352cc4d93ddb7e3861078d, type: 3}
+  sprite: {fileID: 2800000, guid: a231525a7f1383d4b92161d8684eed8d, type: 3}
+  type: 2
+  blockView: {fileID: 11400000, guid: 3852668443149f54fbcec614190c6842, type: 2}
+  stackSize: 64

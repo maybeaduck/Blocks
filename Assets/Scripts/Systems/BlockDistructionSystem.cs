@@ -70,8 +70,8 @@ namespace LittleFroggyHat
         public void BlockDestroy(BlockView block,EcsEntity entity)
         {
             block.Distruction();
-            _sceneData.DistructionFx.transform.position = block.transform.position;
-            _sceneData.DistructionFx.Play();
+            // _sceneData.DistructionFx.transform.position = block.transform.position;
+            // _sceneData.DistructionFx.Play();
             _world.NewEntity().Get<OpenChestImage>();
             entity.Del<DestroyTime>();
             Debug.Log("Distrution");

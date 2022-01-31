@@ -1,8 +1,10 @@
+using System;
 using UnityEngine;
 
 namespace LittleFroggyHat
 {
     [CreateAssetMenu]
+    [Serializable]
     public class Item : ScriptableObject
     {
         public string id;

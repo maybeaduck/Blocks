@@ -11,5 +11,8 @@ namespace LittleFroggyHat
     {
         public AnimationCurve Curve;
         public float AnimationTime;
+        public float ItemFrameLookDuration;
+
+        public AnimationCurve ItemFrameCurve;
     }
 }

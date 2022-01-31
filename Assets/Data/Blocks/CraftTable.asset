@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8010199396e156b44b04c60a85e745d5, type: 3}
+  m_Name: CraftTable
+  m_EditorClassIdentifier: 
+  Hardness: 1
+  LevelToHarvest: 0
+  BestTool: 1
+  Prefub: {fileID: 5687213926642370678, guid: ed9a8fcc84147a9438d0ef612c632b47, type: 3}
+  ItemDrop:
+    item: {fileID: 11400000, guid: e4e3d95d88a9f4d4d88ef4fe48421ad8, type: 2}
+    minDropCount: 1
+    maxDropCount: 1
+  Name: OakLog

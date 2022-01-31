@@ -6,6 +6,7 @@ using UnityEngine;
 namespace LittleFroggyHat
 {
     [CreateAssetMenu()]
+    [Serializable]
     public class BlockData : ScriptableObject
     {
         public float Hardness;

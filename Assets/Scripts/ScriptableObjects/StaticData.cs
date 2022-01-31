@@ -31,7 +31,8 @@ namespace LittleFroggyHat
         public float intervalDropAnimation;
         public float randomOffset;
         public float endPointRandomOffset;
-        
+
+        public float ItemFrameLookDuration;
     }
     [Serializable]
     public class ToolMultiplier
