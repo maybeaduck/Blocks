@@ -31,7 +31,7 @@ namespace LittleFroggyHat
                 ref var entity = ref _filter.GetEntity(item);
                 ref var block = ref _filter.Get1(item).Block;
 
-                block.MeshRenderer.material.color *= .9f;
+                block.Material.color *= .9f;
                 entity.Get<SelectFlag>();
 
                 var time = .25f;
@@ -54,7 +54,7 @@ namespace LittleFroggyHat
                 ref var entity = ref _selectFilter.GetEntity(item);
                 ref var block = ref _selectFilter.Get1(item).Block;
 
-                block.MeshRenderer.material.color = Color.white;
+                block.Material.color = Color.white;
                 entity.Del<SelectFlag>();
                 Debug.Log("BlockSelectSystem _selectFilter");
             }

@@ -8,19 +8,16 @@ namespace LittleFroggyHat
         public Image image;
         public Color  activeColor;
         public Color  inactiveColor;
-        public bool active;
         
-        public void ChangeState()
+        public void ChangeState(bool state)
         {
-            if (!active)
+            if (state)
             {
                 image.color = activeColor;
-                active = true;
             }
             else
             {
                 image.color = inactiveColor;
-                active = false;
             }
         }
     }

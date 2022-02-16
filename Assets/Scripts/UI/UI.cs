@@ -6,6 +6,6 @@ namespace LittleFroggyHat
     {
         public GameScreen GameScreen;
         public AudioSource Audio;
-        public CraftTableScreen CraftTablePopup { get; set; }
+        public CraftTableScreen CraftTablePopup;
     }
 }

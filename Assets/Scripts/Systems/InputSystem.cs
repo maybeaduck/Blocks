@@ -12,31 +12,30 @@ namespace LittleFroggyHat
     {
         public void Run()
         {
-            if (Input.GetMouseButton(1))
-            {
-                
-            
-            }
             if (Input.GetMouseButton(0))
             {
                 Ray ray = _sceneData.Camera.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
                 if (Physics.Raycast(ray, out hit,99999f,_staticData.BlockLayer) &&  !_sceneData.CameraRotate.entity.Has<RotateCamera>() )
                 {
-                    if (hit.collider.CompareTag("InGamePopUp"))
-                    {
-                        hit.collider.GetComponent<InGameButton>().ClickOnPopUp();
-                    }    
+                    
                     _runtimeData.IsAttack = true;      
                 }
-                
-                
+                Ray ray2 = _sceneData.Camera.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit2;
+                if (Physics.Raycast(ray2, out hit2,99999f,_staticData.AllLayer)  )
+                {
+                    if (hit2.collider.CompareTag("CraftTable"))
+                    {
+                        Debug.Log("clicked");
+                        hit2.collider.GetComponent<InGameButton>().ClickOnPopUp();
+                    }
+                }
             }
             else
             {
                 _runtimeData.IsAttack = false;
             }
-            
             
             if (_runtimeData.IsAttack &&  !_sceneData.CameraRotate.entity.Has<RotateCamera>())
             {

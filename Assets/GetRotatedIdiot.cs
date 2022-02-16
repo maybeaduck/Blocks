@@ -11,7 +11,7 @@ namespace LittleFroggyHat
         public float Speed;
         public void Update()
         {
-            transform.Rotate(Axis * Speed);
+            transform.Rotate(Axis * (Speed * Time.deltaTime));
         }
     }
 }

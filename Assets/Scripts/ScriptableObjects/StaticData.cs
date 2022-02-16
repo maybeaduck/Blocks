@@ -33,6 +33,7 @@ namespace LittleFroggyHat
         public float endPointRandomOffset;
 
         public float ItemFrameLookDuration;
+        public LayerMask AllLayer;
     }
     [Serializable]
     public class ToolMultiplier

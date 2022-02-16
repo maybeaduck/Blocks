@@ -67,6 +67,12 @@ namespace LittleFroggyHat
                 .Add(new WeaponSpeedSystem())
                 
                 .Add(new BlockSetSystem())
+
+                #region CraftSystems
+                .Add(new CraftSystem())
+            
+
+                #endregion
                 
                 .Add(new CheckBlockSystem())
                 .Add(new BlockSelectSystem())
@@ -114,6 +120,10 @@ namespace LittleFroggyHat
         }
     }
 
+    internal struct CraftData
+    {
+    }
+
     internal class PopupSystem : Injects, IEcsRunSystem
     {
         public EcsFilter<ShowPopUp> _popup;
@@ -127,6 +137,7 @@ namespace LittleFroggyHat
                 {
                     case PopupType.CraftTable :
                         _ui.CraftTablePopup.Show();
+                        _popup.GetEntity(i).Destroy();
                         break;
                 }
             }

@@ -32,7 +32,7 @@ namespace LittleFroggyHat
 
     public enum BlockType
     {
-        Block,Stair, Half
+        Block,Stair, Half,Grass
     }
     public class BlockView : MonoBehaviour
     {
@@ -41,8 +41,9 @@ namespace LittleFroggyHat
         public Stair Stair;
         public Half Half;
         public BlockData BlockData;
-        public MeshRenderer MeshRenderer;
         
+        public MeshRenderer MeshRenderer;
+        public Material Material;
         private IEnumerator Start()
         {
             yield return null;
@@ -50,6 +51,7 @@ namespace LittleFroggyHat
             Entity.Get<BlockComponent>().Block = this;
 
             MeshRenderer = GetComponentInChildren<MeshRenderer>();
+            Material = MeshRenderer.material;
         }
         
         public void Distruction()

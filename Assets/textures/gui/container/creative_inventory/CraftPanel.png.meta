@@ -17,6 +17,15 @@ TextureImporter:
   - first:
       213: 473621599691980612
     second: CraftPanel_6
+  - first:
+      213: -7236559631933450472
+    second: CraftPanel_7
+  - first:
+      213: 4173659861626533869
+    second: CraftPanel_8
+  - first:
+      213: 1148463796311282347
+    second: CraftPanel_9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -272,6 +281,69 @@ TextureImporter:
       bones: []
       spriteID: 44fb797e554a29600800000000000000
       internalID: 473621599691980612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CraftPanel_7
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 137
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 817dcae0b53929b90800000000000000
+      internalID: -7236559631933450472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CraftPanel_8
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 137
+        width: 25
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de73e89f781dbe930800000000000000
+      internalID: 4173659861626533869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: CraftPanel_9
+      rect:
+        serializedVersion: 2
+        x: 210
+        y: 132
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba2d788ecb920ff00800000000000000
+      internalID: 1148463796311282347
       vertices: []
       indices: 
       edges: []

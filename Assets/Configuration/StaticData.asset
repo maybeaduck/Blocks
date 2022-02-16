@@ -145,3 +145,7 @@ MonoBehaviour:
   intervalDropAnimation: 1.5
   randomOffset: 0.1
   endPointRandomOffset: 0.03
+  ItemFrameLookDuration: 0
+  AllLayer:
+    serializedVersion: 2
+    m_Bits: 4294967295

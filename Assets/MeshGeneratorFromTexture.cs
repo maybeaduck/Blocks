@@ -158,8 +158,18 @@ namespace LittleFroggyHat
                     }
                 }
             }
-            
-            
+
+            for (int s = 0; s <= 2; s++)
+            {
+                for (int h = 0; h <= height; h++)
+                {
+                    for (int w = 0; w <= width; w++)
+                    {
+                        // FixAlphaPixel(w, h, s);
+                    }
+                }
+            }
+
             filter.mesh = mesh;
             mesh.Clear();
             mesh.vertices = verticles.ToArray();
@@ -347,5 +357,100 @@ namespace LittleFroggyHat
             
         }
 
+        public void FixAlphaPixel(int w, int h,int s)
+        {
+            if (texture.GetPixel(w, h).a < 0.2f)
+            {
+                //4 side check
+                if (texture.GetPixel(Mathf.Clamp(w - 1, 0, 15), h).a >= 0.2f)
+                {
+                    var a = verticles.FindIndex(vector3 => vector3 == new Vector3(w-1, s, h));
+                    var b = verticles.FindIndex(vector3 => vector3 == new Vector3(w-1, s, h + 1));
+                    var c = verticles.FindIndex(vector3 => vector3 == new Vector3(w , s, h));
+                    var d = verticles.FindIndex(vector3 => vector3 == new Vector3(w, s, h + 1));
+                    
+                    if(!IfTrianglesConstant(a, b, c))
+                    {
+                        NewTriangle(a, b, c, d, s);
+                    }
+                }
+                // if (texture.GetPixel(Mathf.Clamp(w + 1, 0, 15), h).a >= 0.2f)
+                // {
+                //     var a = verticles.FindIndex(vector3 => vector3 == new Vector3(w+1, s, h));
+                //     var b = verticles.FindIndex(vector3 => vector3 == new Vector3(w+1, s, h + 1));
+                //     var c = verticles.FindIndex(vector3 => vector3 == new Vector3(w+2 , s, h));
+                //     var d = verticles.FindIndex(vector3 => vector3 == new Vector3(w+2, s, h + 1));
+                //     
+                //     if(!IfTrianglesConstant(a, b, c))
+                //     {
+                //         NewTriangle(a, b, c, d, s);
+                //     }
+                // }
+                // if (texture.GetPixel(w, Mathf.Clamp(h - 1, 0, 15)).a >= 0.2f)
+                // {
+                //     var a = verticles.FindIndex(vector3 => vector3 == new Vector3(w, s, h-1));
+                //     var b = verticles.FindIndex(vector3 => vector3 == new Vector3(w, s, h ));
+                //     var c = verticles.FindIndex(vector3 => vector3 == new Vector3(w+1 , s, h -1));
+                //     var d = verticles.FindIndex(vector3 => vector3 == new Vector3(w+1, s, h ));
+                //     
+                //     if(!IfTrianglesConstant(a, b, c))
+                //     {
+                //         NewTriangle(a, b, c, d, s);
+                //     }
+                // }
+                // if (texture.GetPixel(w, Mathf.Clamp(h + 1, 0, 15)).a >= 0.2f)
+                // {
+                //     var a = verticles.FindIndex(vector3 => vector3 == new Vector3(w, s, h+1));
+                //     var b = verticles.FindIndex(vector3 => vector3 == new Vector3(w, s, h +2));
+                //     var c = verticles.FindIndex(vector3 => vector3 == new Vector3(w+1 , s, h +1));
+                //     var d = verticles.FindIndex(vector3 => vector3 == new Vector3(w+1, s, h +2));
+                //     
+                //     if(!IfTrianglesConstant(a, b, c))
+                //     {
+                //         NewTriangle(a, b, c, d, s);
+                //     }
+                // }
+            }
+        }
+
+        public void NewTriangle(int a,int b,int c,int d,int s)
+        {
+            if (s == 0)
+            {
+                triangles.Add(c);
+                triangles.Add(d);
+                triangles.Add(b);
+                triangles.Add(c);
+                triangles.Add(b);
+                triangles.Add(a);
+            }
+            else
+            {
+                triangles.Add(a);
+                triangles.Add(b);
+                triangles.Add(c);
+                triangles.Add(b);
+                triangles.Add(d);
+                triangles.Add(c);
+            }
+        }
+
+        public bool IfTrianglesConstant(int a,int b,int c)
+        {
+            for (var i = 0; i < triangles.Count; i++)
+            {
+                if (i % 3 == 0 || i == 0)
+                {
+                    if (triangles[i] == a && triangles[i+1]==b && triangles[i+2] == c)
+                    {
+                        return true;
+                    }
+                }
+                
+            }
+
+
+            return false;
+        }
     }
 }

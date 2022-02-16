@@ -10,7 +10,8 @@ namespace LittleFroggyHat
     {
         public virtual void ClickOnPopUp()
         {
-            
+            Service<UI>.Get().CraftTablePopup.Show();
+            Debug.Log("Open");
         }
     }
     public class PopupCraftTableButton : InGameButton
